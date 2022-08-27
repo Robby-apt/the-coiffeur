@@ -1,0 +1,46 @@
+// Import fonts from google
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// Global variables
+$primary-color: #fff;
+$secondary-color: #000;
+$bg-color: rgba(0, 0, 0, 0.8);
+$accent-color: #80c6ee;
+
+// Global styling
+* {
+	font-family: Roboto, sans-serif;
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.section {
+	min-height: 100vh;
+}
+
+.sectionTitle,
+.sectionSubTitle {
+	text-align: center;
+}
+
+.sectionTitle {
+	margin: 1.25rem auto 0 auto;
+}
+
+.sectionSubTitle {
+	margin: 0.625rem auto 0 auto;
+}
+// Import other sections scss
+@import './home';
+@import './services';
+@import './about_us';
+@import './appointment';
+@import './media_queries';

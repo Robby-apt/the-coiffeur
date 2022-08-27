@@ -1,0 +1,60 @@
+#services {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	h1 {
+		font-size: 1.25rem;
+		font-weight: bold;
+	}
+
+	h3 {
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}
+
+.serviceBg,
+.serviceOverlay {
+	// background-color: blue;
+	display: flex;
+	width: 75vw;
+	height: 75vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.serviceBg {
+	.leftBg,
+	.rightBg {
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		width: 50%;
+		height: 100%;
+	}
+
+	.leftBg {
+		background: linear-gradient($bg-color, $bg-color),
+			url(../images/karsten-winegeart-p5dIUQFbme4-unsplash.jpg);
+	}
+
+	.rightBg {
+		background: linear-gradient($bg-color, $bg-color),
+			url(../images/joanna-nix-walkup-H4fEMshfwTE-unsplash.jpg);
+	}
+}
+
+.serviceOverlay {
+	.serviceList {
+		margin: auto;
+
+		p {
+			color: $primary-color;
+			font-weight: bold;
+			text-align: center;
+		}
+	}
+}

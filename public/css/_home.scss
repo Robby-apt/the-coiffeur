@@ -1,0 +1,171 @@
+#home {
+	background: linear-gradient($bg-color, $bg-color),
+		url(../images/adam-winger-VjRpkGtS55w-unsplash.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	a,
+	p {
+		color: $primary-color;
+	}
+}
+
+// Navbar styling section
+nav {
+	// background-color: $secondary-color;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.25rem auto 0;
+	position: relative;
+	width: 90%;
+
+	p {
+		margin: 0;
+	}
+}
+
+.brand {
+	// background-color: $accent-color;
+	display: flex;
+
+	a {
+		&:first-child {
+			margin: auto 1.25rem auto 0;
+		}
+
+		&:last-child {
+			margin: auto 0;
+		}
+	}
+
+	img {
+		width: 3.125rem;
+		height: 3.125rem;
+	}
+
+	p {
+		font-size: 1.25rem;
+	}
+}
+
+.navLinks {
+	display: flex;
+	margin: auto 0;
+
+	a {
+		margin-top: auto;
+		margin-bottom: auto;
+
+		&:not(.navCTA) {
+			margin-right: 1.25rem;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.navCTA {
+		border: $primary-color 0.125rem solid;
+		border-radius: 1.25rem;
+		padding: 0.3125rem 0.625rem;
+
+		&:hover {
+			background-color: $primary-color;
+			color: $secondary-color !important;
+			text-decoration: none;
+		}
+	}
+}
+
+.navLinksResponsive {
+	background-color: $accent-color;
+	// display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	right: 0;
+
+	a {
+		&:not(.navCTA) {
+			margin-bottom: 0.625rem;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.navCTA {
+		border: $primary-color 0.125rem solid;
+		border-radius: 1.25rem;
+		padding: 0.3125rem 0.625rem;
+
+		&:hover {
+			background-color: $primary-color;
+			color: $secondary-color !important;
+			text-decoration: none;
+		}
+	}
+}
+
+.navIcons {
+	display: none;
+	margin: auto 0;
+
+	i {
+		color: $primary-color;
+		font-size: 1.25rem;
+	}
+}
+
+// Intro section styling
+.introSection {
+	// background-color: $accent-color;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	p,
+	a {
+		margin: auto;
+		text-align: center;
+	}
+
+	p {
+		margin-bottom: 1.25rem;
+	}
+}
+
+.introName {
+	font-weight: bold;
+	font-size: 3rem;
+}
+
+.slogan {
+	font-weight: bold;
+	font-size: 2.25rem;
+}
+
+.introAbout {
+	font-size: 1.5rem;
+}
+
+.introCTA {
+	border: $primary-color 0.125rem solid;
+	font-size: 1.25rem;
+	padding: 0.3125rem 0.625rem;
+
+	&:hover {
+		background-color: $primary-color;
+		color: $secondary-color !important;
+		text-decoration: none;
+	}
+}
