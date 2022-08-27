@@ -295,6 +295,11 @@ nav p {
   font-weight: bold;
 }
 
+#about .aboutPara {
+  margin: 0.625rem auto 0;
+  text-align: center;
+}
+
 #about h3 {
   font-size: 1rem;
   font-weight: bold;
