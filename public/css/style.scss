@@ -28,16 +28,10 @@ a {
 
 .sectionTitle,
 .sectionSubTitle {
+	margin: 1.25rem auto 0 auto;
 	text-align: center;
 }
 
-.sectionTitle {
-	margin: 1.25rem auto 0 auto;
-}
-
-.sectionSubTitle {
-	margin: 0.625rem auto 0 auto;
-}
 // Import other sections scss
 @import './home';
 @import './services';

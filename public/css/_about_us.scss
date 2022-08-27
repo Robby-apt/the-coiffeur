@@ -18,3 +18,24 @@
 		font-weight: bold;
 	}
 }
+
+.locationDiv {
+	background-color: $accent-color;
+	margin: 1.25rem auto 0;
+	width: 50vw;
+	height: 50vh;
+}
+
+.staffSection {
+	background-color: $accent-color;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	margin: 1.25rem auto 0;
+	width: 90vw;
+	min-height: 10px;
+}
+
+.staffMember {
+	width: 50px;
+	height: 100px;
+}

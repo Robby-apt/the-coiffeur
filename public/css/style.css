@@ -20,15 +20,8 @@ a {
 
 .sectionTitle,
 .sectionSubTitle {
-  text-align: center;
-}
-
-.sectionTitle {
   margin: 1.25rem auto 0 auto;
-}
-
-.sectionSubTitle {
-  margin: 0.625rem auto 0 auto;
+  text-align: center;
 }
 
 #home {
@@ -303,5 +296,28 @@ nav p {
 #about h3 {
   font-size: 1rem;
   font-weight: bold;
+}
+
+.locationDiv {
+  background-color: #80c6ee;
+  margin: 1.25rem auto 0;
+  width: 50vw;
+  height: 50vh;
+}
+
+.staffSection {
+  background-color: #80c6ee;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  margin: 1.25rem auto 0;
+  width: 90vw;
+  min-height: 10px;
+}
+
+.staffMember {
+  width: 50px;
+  height: 100px;
 }
 /*# sourceMappingURL=style.css.map */
