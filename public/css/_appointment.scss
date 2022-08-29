@@ -1,0 +1,76 @@
+.appointmentForm {
+	background-color: $primary-color;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 0 1.25rem;
+	width: fit-content;
+	height: fit-content;
+
+	.formHeading {
+		color: $secondary-color !important;
+		margin: 1.25rem auto 0;
+		text-align: center;
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 1.25rem auto;
+
+	.formSubDiv {
+		margin-bottom: 1.25rem;
+	}
+}
+
+.appointmentName,
+.dateAndTime {
+	display: flex;
+	justify-content: space-between;
+
+	div {
+		// background-color: antiquewhite;
+		width: 48%;
+	}
+}
+
+.phoneNumber,
+.typeOfServiceInput {
+	// background-color: $accent-color;
+	width: 100%;
+}
+
+.inputFieldDiv {
+	display: flex;
+	flex-direction: column;
+
+	input,
+	select {
+		background-color: $primary-color;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		border-bottom: 0.125rem solid $secondary-color;
+		outline: none;
+		width: 100%;
+
+		&:focus {
+			border-bottom: 0.125rem solid $accent-color;
+		}
+	}
+}
+
+.appointmentBtn {
+	background: none;
+	border: 0.125rem solid $secondary-color;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.3125rem 0.625rem;
+
+	&:hover {
+		background-color: $secondary-color;
+		color: $primary-color;
+	}
+}

@@ -4,7 +4,7 @@ import socialMedia from '../../socialmedia';
 
 function SocialMediaSection() {
 	return (
-		<div className="socialMedia">
+		<div className="socialMedia topOverlay">
 			<div className="socialInfo">
 				<p className="socialIntro">
 					Get in touch with us today.
@@ -25,7 +25,7 @@ function SocialMediaSection() {
 				<p className="phoneText">Phone: +254 712 345 678</p>
 				<p className="emailText">Email: thecoiffeur@gmail.com</p>
 				<p className="conclusion">
-					Because it's more than just a haircut,
+					Because it's more than just a haircut,{` `}
 					<strong>it's about you</strong>
 				</p>
 			</div>

@@ -1,17 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Landing from '../pages/Landing';
 import Appointment from '../pages/Appointment';
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Landing />}>
-					<Route index element={<Appointment />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<Routes>
+			<Route path="/" element={<Landing />} />
+			<Route path="/appointment" element={<Appointment />} />
+		</Routes>
 	);
 }
 

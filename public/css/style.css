@@ -386,6 +386,7 @@ nav p {
   display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .topRow div {
@@ -442,6 +443,7 @@ nav p {
 .topRow .contactFormSection form div input,
 .topRow .contactFormSection form div textarea {
   margin: 0;
+  outline: none;
 }
 
 .topRow .contactFormSection form div input {
@@ -452,8 +454,16 @@ nav p {
   width: 100%;
 }
 
+.topRow .contactFormSection form div input:focus {
+  border-bottom: 0.125rem solid #80c6ee;
+}
+
 .topRow .contactFormSection form div textarea {
   border: 0.125rem solid #000;
+}
+
+.topRow .contactFormSection form div textarea:focus {
+  border: 0.125rem solid #80c6ee;
 }
 
 .topRow .contactFormSection form button {
@@ -478,6 +488,7 @@ nav p {
   display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .bottomRow div {
@@ -561,5 +572,105 @@ footer p a {
 footer p a:hover {
   color: inherit;
   text-decoration: underline;
+}
+
+.appointmentForm {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  padding: 0 1.25rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.appointmentForm .formHeading {
+  color: #000 !important;
+  margin: 1.25rem auto 0;
+  text-align: center;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1.25rem auto;
+}
+
+form .formSubDiv {
+  margin-bottom: 1.25rem;
+}
+
+.appointmentName,
+.dateAndTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.appointmentName div,
+.dateAndTime div {
+  width: 48%;
+}
+
+.phoneNumber,
+.typeOfServiceInput {
+  width: 100%;
+}
+
+.inputFieldDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inputFieldDiv input,
+.inputFieldDiv select {
+  background-color: #fff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 0.125rem solid #000;
+  outline: none;
+  width: 100%;
+}
+
+.inputFieldDiv input:focus,
+.inputFieldDiv select:focus {
+  border-bottom: 0.125rem solid #80c6ee;
+}
+
+.appointmentBtn {
+  background: none;
+  border: 0.125rem solid #000;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3125rem 0.625rem;
+}
+
+.appointmentBtn:hover {
+  background-color: #000;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

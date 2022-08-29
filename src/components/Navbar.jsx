@@ -29,6 +29,7 @@ function Navbar() {
 				<a href="#">Contact</a>
 				<a href="#" className="navCTA">
 					Book an appointment
+					{/* <Link to="">Book an appointment</Link> */}
 				</a>
 			</div>
 

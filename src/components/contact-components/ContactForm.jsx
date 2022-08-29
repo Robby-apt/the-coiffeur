@@ -15,10 +15,10 @@ function ContactForm() {
 	}
 
 	return (
-		<div className="contactFormSection">
+		<div className="contactFormSection topOverlay">
 			<form action="" className="contactForm">
 				<div className="nameInput topInput">
-					<label htmlFor="name">Name:</label>
+					<label htmlFor="name">Name</label>
 					<input
 						type="text"
 						name="name"
@@ -29,7 +29,7 @@ function ContactForm() {
 				</div>
 
 				<div className="emailInput">
-					<label htmlFor="email">Email:</label>
+					<label htmlFor="email">Email</label>
 					<input
 						type="email"
 						name="email"
@@ -40,7 +40,7 @@ function ContactForm() {
 				</div>
 
 				<div className="messageInput">
-					<label htmlFor="message">Message:</label>
+					<label htmlFor="message">Message</label>
 					<textarea
 						type="text"
 						name="message"
