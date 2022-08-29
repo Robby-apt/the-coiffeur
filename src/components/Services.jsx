@@ -1,4 +1,6 @@
 import React from 'react';
+import ServiceBg from './service-components/ServiceBg'
+import ServiceList from './service-components/ServiceList'
 
 function Services() {
 	return (
@@ -8,22 +10,8 @@ function Services() {
 				These are the services we provide.
 			</h3>
 
-			<div className="serviceBg">
-				<div className="leftBg" />
-				<div className="rightBg" />
-			</div>
-			<div className="serviceOverlay">
-				<div className="serviceList">
-					<p>Hair and Beard products</p>
-					<p>Beard trimming</p>
-					<p>Hair trimming</p>
-					<p>Hair braiding</p>
-					<p>Manicure</p>
-					<p>Pedicure</p>
-					<p>Make-up</p>
-					<p>Hair dye</p>
-				</div>
-			</div>
+			<ServiceBg/>
+			<ServiceList/>
 		</div>
 	);
 }

@@ -4,11 +4,11 @@ const socialMedia = [
 		socialLink: `#`,
 	},
 	{
-		socialIcon: `fa-brands fa-facebook-f`,
+		socialIcon: `fa-brands fa-instagram`,
 		socialLink: `#`,
 	},
 	{
-		socialIcon: `fa-brands fa-facebook-f`,
+		socialIcon: `fa-brands fa-twitter`,
 		socialLink: `#`,
 	},
 ];
