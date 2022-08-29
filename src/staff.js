@@ -1,4 +1,4 @@
-const staff = [
+const topStaff = [
 	{
 		staffImg: `/images/rufus-oyemade-ifGki8ueq54-unsplash.jpg`,
 		staffName: `James Okioma`,
@@ -11,6 +11,9 @@ const staff = [
 		staffImg: `/images/curtis-powell-3mMvCsW6ZYs-unsplash.jpg`,
 		staffName: `Moses Juma`,
 	},
+];
+
+const bottomStaff = [
 	{
 		staffImg: `/images/jeffery-erhunse-BQMZ5ligqps-unsplash.jpg`,
 		staffName: `Diana Nashipae`,
@@ -25,4 +28,4 @@ const staff = [
 	},
 ];
 
-export default staff;
+export { topStaff, bottomStaff };

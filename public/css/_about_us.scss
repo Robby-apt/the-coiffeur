@@ -3,22 +3,13 @@
 	flex-direction: column;
 	position: relative;
 
-	h1 {
-		font-size: 1.25rem;
-		font-weight: bold;
-	}
-
 	.aboutPara {
 		margin: 0.625rem auto 0;
 		text-align: center;
 	}
-
-	h3 {
-		font-size: 1rem;
-		font-weight: bold;
-	}
 }
 
+// location section styling
 .locationDiv {
 	background-color: $accent-color;
 	margin: 1.25rem auto 0;
@@ -26,16 +17,44 @@
 	height: 50vh;
 }
 
+// staff section styling
 .staffSection {
-	background-color: $accent-color;
-	display: grid;
-	grid-template-columns: auto auto auto;
+	// background-color: $accent-color;
+	display: flex;
+	flex-direction: column;
 	margin: 1.25rem auto 0;
 	width: 90vw;
 	min-height: 10px;
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		// width: 100%;
+	}
+
+	.topStaff {
+		margin-bottom: 1.25rem;
+	}
 }
 
 .staffMember {
-	width: 50px;
-	height: 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+	width: 20vw;
+	height: 40vh;
+
+	.nameBg {
+		background-color: $secondary-color;
+		margin: auto 0 0 0;
+		width: 100%;
+
+		p {
+			color: $primary-color;
+			margin: 0.3125rem auto;
+			text-align: center;
+		}
+	}
 }

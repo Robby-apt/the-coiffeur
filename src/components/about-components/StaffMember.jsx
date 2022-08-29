@@ -3,10 +3,10 @@ import React from 'react';
 function StaffMember(props) {
 	return (
 		<div
-			className="staffMember"
+			className={`staffMember ${props.className}`}
 			style={{ backgroundImage: `url(${props.staffImg})` }}
 		>
-			<div className="name">
+			<div className="nameBg">
 				<p>{props.staffName}</p>
 			</div>
 		</div>

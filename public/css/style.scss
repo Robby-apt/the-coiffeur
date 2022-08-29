@@ -28,13 +28,25 @@ a {
 
 .sectionTitle,
 .sectionSubTitle {
+	font-weight: bold;
 	margin: 1.25rem auto 0 auto;
 	text-align: center;
+}
+
+.sectionTitle {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.sectionSubTitle {
+	font-size: 1rem;
+	font-weight: bold;
 }
 
 // Import other sections scss
 @import './home';
 @import './services';
 @import './about_us';
+@import './contact';
 @import './appointment';
 @import './media_queries';
