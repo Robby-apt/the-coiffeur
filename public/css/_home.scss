@@ -4,7 +4,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-    // background-image: url(../images/);
+	// background-image: url(../images/);
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -84,9 +84,13 @@ nav {
 }
 
 .navLinksResponsive {
-	background-color: $accent-color;
-	// display: flex;
+	border-right: 0.125rem solid $primary-color;
+	border-bottom: 0.125rem solid $primary-color;
+	border-left: 0.125rem solid $primary-color;
+	background-color: $secondary-color;
+	display: flex;
 	flex-direction: column;
+	padding: 0 0.3125rem 0.3125rem;
 	position: absolute;
 	top: 100%;
 	right: 0;
@@ -129,10 +133,7 @@ nav {
 	// background-color: $accent-color;
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	margin: auto;
 
 	p,
 	a {

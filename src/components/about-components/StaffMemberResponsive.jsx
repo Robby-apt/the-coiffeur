@@ -1,9 +1,9 @@
 import React from 'react';
 
-function StaffMember(props) {
+function StaffMemberResponsive(props) {
 	return (
 		<div
-			className="staffMember"
+			className={props.classList}
 			style={{ backgroundImage: `url(${props.staffImg})` }}
 		>
 			<div className="nameBg">
@@ -13,4 +13,4 @@ function StaffMember(props) {
 	);
 }
 
-export default StaffMember;
+export default StaffMemberResponsive;

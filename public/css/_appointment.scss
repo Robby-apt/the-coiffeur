@@ -5,7 +5,10 @@
 	margin: auto;
 	padding: 0 1.25rem;
 	width: fit-content;
+	min-width: 380px;
+	max-width: 90vw;
 	height: fit-content;
+	min-height: 422px;
 
 	.formHeading {
 		color: $secondary-color !important;

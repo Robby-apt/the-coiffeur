@@ -10,7 +10,7 @@ function Intro() {
 				<br />
 				with a more refined taste
 			</p>
-			<a href="#" className="introCTA">
+			<a href="/appointment" className="introCTA">
 				Book an appointment
 				<br />
 				with a hairdresser

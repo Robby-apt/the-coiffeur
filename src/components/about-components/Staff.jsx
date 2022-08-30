@@ -10,7 +10,6 @@ function Staff() {
 					return (
 						<StaffMember
 							key={index}
-							className={item.className}
 							staffImg={item.staffImg}
 							staffName={item.staffName}
 						/>
@@ -22,7 +21,6 @@ function Staff() {
 					return (
 						<StaffMember
 							key={index}
-							className={item.className}
 							staffImg={item.staffImg}
 							staffName={item.staffName}
 						/>

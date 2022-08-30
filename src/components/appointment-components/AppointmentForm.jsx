@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function AppointmentForm() {
+	const [appointmentInput, setAppointmentInput] = useState({
+		fName: ``,
+		lName: ``,
+		phoneNumber: ``,
+		dateInput: ``,
+		timeInput: ``,
+		typeOfService: ``,
+	});
+
+	function handleAppointmentChange(event) {
+		let { name, value } = event.target;
+		setAppointmentInput((...prev) => {
+			return { ...prev, [name]: value };
+		});
+	}
+
 	return (
 		<div className="appointmentForm">
 			<p className="formHeading">
@@ -11,29 +27,59 @@ function AppointmentForm() {
 				<div className="appointmentName formSubDiv">
 					<div className="firstName inputFieldDiv">
 						<label htmlFor="fName">First Name</label>
-						<input type="text" name="fName" id="fName" />
+						<input
+							type="text"
+							name="fName"
+							id="fName"
+							value={appointmentInput.fName}
+							onChange={handleAppointmentChange}
+						/>
 					</div>
 
 					<div className="lastName inputFieldDiv">
 						<label htmlFor="lName">Last Name</label>
-						<input type="text" name="lName" id="lName" />
+						<input
+							type="text"
+							name="lName"
+							id="lName"
+							value={appointmentInput.lName}
+							onChange={handleAppointmentChange}
+						/>
 					</div>
 				</div>
 
 				<div className="phoneNumber formSubDiv inputFieldDiv">
 					<label htmlFor="phoneNo">Phone Number</label>
-					<input type="text" name="phoneNo" id="phoneNo" />
+					<input
+						type="text"
+						name="phoneNo"
+						id="phoneNo"
+						value={appointmentInput.phoneNumber}
+						onChange={handleAppointmentChange}
+					/>
 				</div>
 
 				<div className="dateAndTime formSubDiv">
 					<div className="dateInput inputFieldDiv">
 						<label htmlFor="date">Date</label>
-						<input type="date" name="date" id="date" />
+						<input
+							type="date"
+							name="date"
+							id="date"
+							value={appointmentInput.dateInput}
+							onChange={handleAppointmentChange}
+						/>
 					</div>
 
 					<div className="time inputFieldDiv">
 						<label htmlFor="time">Time</label>
-						<input type="time" name="time" id="time" />
+						<input
+							type="time"
+							name="time"
+							id="time"
+							value={appointmentInput.timeInput}
+							onChange={handleAppointmentChange}
+						/>
 					</div>
 				</div>
 
@@ -41,7 +87,9 @@ function AppointmentForm() {
 					<label htmlFor="typeOfService">Type of service</label>
 					<select
 						name="typeOfServiceInputField"
-						id="typeOfServiceInputOptions"
+						id="typeOfService"
+						value={appointmentInput.typeOfService}
+						onChange={handleAppointmentChange}
 					>
 						<option value="Hair and Beard products">
 							Hair and Beard products
@@ -55,7 +103,6 @@ function AppointmentForm() {
 						<option value="Hair dye">Hair dye</option>
 					</select>
 				</div>
-
 				<button type="submit" className="appointmentBtn">
 					Book <br /> Appointment
 				</button>

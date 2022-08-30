@@ -17,7 +17,7 @@ a {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 .sectionTitle,
@@ -130,11 +130,18 @@ nav p {
 }
 
 .navLinksResponsive {
-  background-color: #80c6ee;
+  border-right: 0.125rem solid #fff;
+  border-bottom: 0.125rem solid #fff;
+  border-left: 0.125rem solid #fff;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 0.3125rem 0.3125rem;
   position: absolute;
   top: 100%;
   right: 0;
@@ -178,11 +185,7 @@ nav p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin: auto;
 }
 
 .introSection p,
@@ -286,8 +289,13 @@ nav p {
   position: relative;
 }
 
-#about .aboutPara {
+#about .aboutParaContainer {
   margin: 0.625rem auto 0;
+  width: 90vw;
+}
+
+#about .aboutParaContainer .aboutPara {
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -349,6 +357,45 @@ nav p {
   text-align: center;
 }
 
+.staffSlideShow {
+  display: none;
+  margin: 1.25rem auto 0 !important;
+  width: 90%;
+}
+
+.innerSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.slideImgDiv {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+  margin: 0 auto;
+  position: relative;
+  width: 15rem;
+  height: 25rem;
+}
+
+.slideImgDiv .nameBg {
+  background-color: #000;
+  margin: auto 0 0 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.slideImgDiv .nameBg p {
+  color: #fff;
+  margin: 0.3125rem auto;
+  text-align: center;
+}
+
 #contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -357,7 +404,6 @@ nav p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
 }
 
 .contactFormAndMedia {
@@ -372,12 +418,14 @@ nav p {
           flex-direction: column;
   margin: auto;
   width: 70vw;
+  min-height: 704px !important;
   height: 70vh;
 }
 
 .contactFormAndMedia .row {
   width: 100%;
   height: 50%;
+  min-height: 350px;
 }
 
 .topRow {
@@ -386,7 +434,6 @@ nav p {
   display: flex;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .topRow div {
@@ -588,9 +635,12 @@ footer p a:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  min-width: 380px;
+  max-width: 90vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  min-height: 422px;
 }
 
 .appointmentForm .formHeading {
@@ -672,5 +722,72 @@ form .formSubDiv {
 .appointmentBtn:hover {
   background-color: #000;
   color: #fff;
+}
+
+@media (max-width: 760px) {
+  .contactFormAndMedia {
+    width: 90vw !important;
+  }
+}
+
+@media (max-width: 930px) {
+  .navLinks {
+    display: none;
+  }
+  .navIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 1070px) {
+  .locationDiv {
+    width: 90%;
+    height: 60vh;
+  }
+  .staffSection {
+    display: none;
+  }
+  .staffSlideShow {
+    display: initial;
+  }
+}
+
+@media (max-width: 1488px) {
+  #contact {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .contactFormAndMedia {
+    width: 50vw;
+    min-height: 80vh;
+  }
+  .row {
+    max-height: 50%;
+  }
+  .topRow .imgSection {
+    display: none;
+  }
+  .topRow .contactFormSection {
+    width: 100%;
+  }
+  .topRow .contactFormSection form {
+    margin: 1.25rem auto;
+  }
+  .bottomRow .socialMedia {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+  .bottomRow .imgSection {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
