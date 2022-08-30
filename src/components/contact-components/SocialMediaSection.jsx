@@ -22,7 +22,7 @@ function SocialMediaSection() {
 						);
 					})}
 				</div>
-				<p className="phoneText">Phone: +254 712 345 678</p>
+				<p className="phoneText">Phone: +254 7XX XXX XXX</p>
 				<p className="emailText">Email: thecoiffeur@gmail.com</p>
 				<p className="conclusion">
 					Because it's more than just a haircut,{` `}
