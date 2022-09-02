@@ -241,9 +241,9 @@ nav p {
   display: -ms-flexbox;
   display: flex;
   width: 85vw;
-  height: 85vh;
+  height: 72vh;
   position: absolute;
-  top: 54%;
+  top: 46%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -268,14 +268,80 @@ nav p {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/joanna-nix-walkup-H4fEMshfwTE-unsplash.jpg);
 }
 
-.serviceOverlay .serviceList {
+.serviceOverlay table {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
   margin: auto;
+  max-width: 90%;
 }
 
-.serviceOverlay .serviceList p {
-  color: #fff;
+.serviceOverlay table th,
+.serviceOverlay table td {
+  padding: 0.3125rem;
+}
+
+.serviceOverlay table thead {
+  font-size: 1.25rem;
   font-weight: bold;
-  text-align: center;
+}
+
+.serviceOverlay table thead tr th {
+  border: 0.125rem solid #fff;
+}
+
+.serviceOverlay table tbody tr {
+  border: 0.125rem solid #fff;
+}
+
+.serviceOverlay table tbody tr td:first-child {
+  border-right: 0.125rem solid #fff;
+}
+
+.openingHours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  position: absolute;
+  top: 91%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.openingHours p {
+  margin: 0 auto 0.625rem;
+}
+
+.openingHours table {
+  margin: auto;
+  max-width: 90%;
+}
+
+.openingHours table th,
+.openingHours table td {
+  padding: 0.3125rem;
+}
+
+.openingHours table thead {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.openingHours table thead tr th {
+  border: 0.125rem solid #000;
+}
+
+.openingHours table tbody tr {
+  border: 0.125rem solid #000;
+}
+
+.openingHours table tbody tr td:first-child {
+  border: 0.125rem solid #000;
 }
 
 #about {
@@ -300,10 +366,14 @@ nav p {
 }
 
 .locationDiv {
-  background-color: #80c6ee;
   margin: 1.25rem auto 0;
   width: 50vw;
   height: 50vh;
+}
+
+.locationDiv iframe {
+  width: 100%;
+  height: 100%;
 }
 
 .staffSection {
@@ -406,6 +476,10 @@ nav p {
           flex-direction: column;
 }
 
+#contact .sectionSubTitle {
+  margin-bottom: 1px;
+}
+
 .contactFormAndMedia {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -441,8 +515,8 @@ nav p {
 }
 
 .topRow .imgSection {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../images/shari-sirotnak-oM5YoMhTf8E-unsplash.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/shari-sirotnak-oM5YoMhTf8E-unsplash.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(../images/shari-sirotnak-oM5YoMhTf8E-unsplash.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../images/shari-sirotnak-oM5YoMhTf8E-unsplash.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -590,8 +664,8 @@ nav p {
 }
 
 .bottomRow .imgSection {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -742,6 +816,10 @@ form .formSubDiv {
 }
 
 @media (max-width: 1070px) {
+  .serviceBg,
+  .serviceOverlay {
+    width: 90vw;
+  }
   .locationDiv {
     width: 90%;
     height: 60vh;

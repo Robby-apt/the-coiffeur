@@ -1,6 +1,7 @@
 import React from 'react';
-import ServiceBg from './service-components/ServiceBg'
-import ServiceList from './service-components/ServiceList'
+import ServiceBg from './service-components/ServiceBg';
+import ServiceList from './service-components/ServiceList';
+import ServiceHours from './service-components/ServiceHours';
 
 function Services() {
 	return (
@@ -10,8 +11,9 @@ function Services() {
 				These are the services we provide.
 			</h3>
 
-			<ServiceBg/>
-			<ServiceList/>
+			<ServiceBg />
+			<ServiceList />
+			<ServiceHours />
 		</div>
 	);
 }

@@ -15,6 +15,11 @@
 }
 
 @media (max-width: 1070px) {
+	.serviceBg,
+	.serviceOverlay {
+		width: 90vw;
+	}
+
 	.locationDiv {
 		width: 90%;
 		height: 60vh;

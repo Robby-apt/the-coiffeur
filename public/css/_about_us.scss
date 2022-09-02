@@ -17,10 +17,15 @@
 
 // location section styling
 .locationDiv {
-	background-color: $accent-color;
+	// background-color: $accent-color;
 	margin: 1.25rem auto 0;
 	width: 50vw;
 	height: 50vh;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 // staff section styling
