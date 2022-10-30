@@ -1,8 +1,13 @@
 import React from 'react';
 
-function Intro() {
+function Intro(props) {
 	return (
-		<div className="introSection">
+		<div
+			className="introSection"
+			onClick={() => {
+				props.setResNavShowing(false);
+			}}
+		>
 			<p className="introName">Welcome to The Coiffeur</p>
 			<p className="slogan">More than just a haircut</p>
 			<p className="introAbout">

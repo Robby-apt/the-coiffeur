@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Navbar() {
-	const [isResNavShowing, setResNavShowing] = useState(false);
-
+function Navbar(props) {
 	let disableNav = () => {
-		if (isResNavShowing === true) {
-			setTimeout(() => {
-				setResNavShowing(false);
-			}, 20000);
-		}
+		props.setResNavShowing(false);
 	};
 
 	return (
 		<nav>
-			{disableNav()}
-			<div className="brand">
+			{/* {disableNav()} */}
+			<div className="brand" onClick={()=> disableNav()}>
 				<a href="/#home">
 					<img
 						src="/images/logo.svg"
@@ -32,25 +27,25 @@ function Navbar() {
 			</div>
 
 			<div className="navLinks">
-				<a href="/#home">Home</a>
+				<Link to="/">Home</Link>
 				<a href="/#services">Services</a>
 				<a href="/#about">About Us</a>
 				<a href="/#contact">Contact</a>
-				<a href="/appointment" className="navCTA">
+				<Link to="/appointment" className="navCTA">
 					Book an appointment
-				</a>
+				</Link>
 			</div>
 
 			<div className="navIcons">
-				{isResNavShowing ? (
+				{props.isResNavShowing ? (
 					<i
 						className="fa-solid fa-xmark"
-						onClick={() => setResNavShowing(false)}
+						onClick={() => props.setResNavShowing(false)}
 					/>
 				) : (
 					<i
 						className="fa-solid fa-bars"
-						onClick={() => setResNavShowing(true)}
+						onClick={() => props.setResNavShowing(true)}
 					/>
 				)}
 			</div>
@@ -58,14 +53,16 @@ function Navbar() {
 			<div
 				className="navLinksResponsive"
 				style={
-					isResNavShowing ? { display: 'flex' } : { display: 'none' }
+					props.isResNavShowing
+						? { display: 'flex' }
+						: { display: 'none' }
 				}
 			>
-				<a href="#">Home</a>
-				<a href="#">Services</a>
-				<a href="#">About Us</a>
-				<a href="#">Contact</a>
-				<a href="#" className="navCTA">
+				<a href="/#home">Home</a>
+				<a href="/#services">Services</a>
+				<a href="/#about">About Us</a>
+				<a href="/#contact">Contact</a>
+				<a href="/appointment" className="navCTA">
 					Book an appointment
 				</a>
 			</div>
