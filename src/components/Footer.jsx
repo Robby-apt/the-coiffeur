@@ -3,6 +3,7 @@ import React from 'react';
 function Footer() {
 	let currentDate = new Date();
 	let year = currentDate.getFullYear();
+    
 	return (
 		<footer className="footer">
 			<p>

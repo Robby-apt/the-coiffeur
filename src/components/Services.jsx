@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceBg from './service-components/ServiceBg';
-import ServiceList from './service-components/ServiceList';
+// import ServiceList from './service-components/ServiceList';
 import ServiceHours from './service-components/ServiceHours';
 
 function Services() {
@@ -12,7 +12,7 @@ function Services() {
 			</h3>
 
 			<ServiceBg />
-			<ServiceList />
+			{/* <ServiceList /> */}
 			<ServiceHours />
 		</div>
 	);

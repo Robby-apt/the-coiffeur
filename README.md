@@ -9,7 +9,7 @@ The project is purely frontend and is intended to be used as practice for differ
 
 ## Technologies used
 
-The technology used include:
+The technologies used include:
 
 -   React
 -   Bootstrap

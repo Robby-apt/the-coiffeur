@@ -5,19 +5,13 @@
 	position: relative;
 }
 
-.serviceBg,
-.serviceOverlay {
-	// background-color: blue;
+.serviceBg {
 	display: flex;
 	width: 85vw;
 	height: 72vh;
-	position: absolute;
-	top: 46%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
+	margin: 0.625rem auto;
+	position: relative;
 
-.serviceBg {
 	.leftBg,
 	.rightBg {
 		background-position: center !important;
@@ -39,6 +33,12 @@
 }
 
 .serviceOverlay {
+	// background-color: blue;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
 	table {
 		background-color: $bg-color;
 		color: $primary-color;
@@ -80,11 +80,8 @@
 	// background-color: $accent-color;
 	display: flex;
 	flex-direction: column;
+	margin: auto;
 	width: 90%;
-	position: absolute;
-	top: 91%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 
 	p {
 		margin: 0 auto 0.625rem;

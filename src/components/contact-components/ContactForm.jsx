@@ -14,9 +14,13 @@ function ContactForm() {
 		});
 	}
 
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
 	return (
 		<div className="contactFormSection topOverlay">
-			<form action="" className="contactForm">
+			<form onSubmit={handleSubmit} className="contactForm">
 				<div className="nameInput topInput">
 					<label htmlFor="name">Name</label>
 					<input
