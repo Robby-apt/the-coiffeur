@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Intro(props) {
 	return (
@@ -15,11 +16,9 @@ function Intro(props) {
 				<br />
 				with a more refined taste
 			</p>
-			<a href="/appointment" className="introCTA">
+			<Link to="/appointment" className="introCTA">
 				Book an appointment
-				<br />
-				with a hairdresser
-			</a>
+			</Link>
 		</div>
 	);
 }
