@@ -191,6 +191,7 @@ nav p {
   width: 85vw;
   height: 72vh;
   margin: 0.625rem auto;
+  min-height: 412px;
   position: relative;
 }
 .serviceBg .leftBg,
