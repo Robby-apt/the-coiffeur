@@ -7,7 +7,7 @@ function Footer() {
 	return (
 		<footer className="footer">
 			<p>
-				Designed by <a href="https://robin-khaoya.dev">Robin</a> &#169; {year} - All rights
+				Designed by <a href="https://robin-khaoya.dev" target="_blank" rel="noopener noreferrer">Robin</a> &#169; {year} - All rights
 				reserved.
 			</p>
 		</footer>
