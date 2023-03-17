@@ -9,7 +9,7 @@ function Navbar(props) {
 	return (
 		<nav>
 			{/* {disableNav()} */}
-			<div className="brand" onClick={()=> disableNav()}>
+			<div className="brand" onClick={() => disableNav()}>
 				<a href="/#home">
 					<img
 						src="/images/logo.svg"
@@ -62,9 +62,9 @@ function Navbar(props) {
 				<a href="/#services">Services</a>
 				<a href="/#about">About Us</a>
 				<a href="/#contact">Contact</a>
-				<a href="/appointment" className="navCTA">
+				<Link to="/appointment" className="navCTA">
 					Book an appointment
-				</a>
+				</Link>
 			</div>
 		</nav>
 	);
