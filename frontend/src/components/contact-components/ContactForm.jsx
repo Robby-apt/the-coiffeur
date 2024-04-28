@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const validator = require('email-validator');
 
 function ContactForm() {
 	const [formInput, setFormInput] = useState({
@@ -14,9 +15,40 @@ function ContactForm() {
 		});
 	}
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
+	async function handleSubmit(event) {
+		event.preventDefault();
+
+		if (validator.validate(formInput.email)) {
+			let dataBody = JSON.stringify(formInput);
+
+			try {
+				const url = process.env.REACT_APP_BACKEND_PORT;
+				let res = await fetch(url, {
+					method: 'POST',
+					headers: { 'content-type': 'application/json' },
+					body: dataBody,
+				});
+				// get status code
+				if (res.status == 200) {
+					alert(`The message has been sent successfully`);
+					setFormInput({
+						name: ``,
+						email: ``,
+						message: ``,
+					});
+					console.log(formInput);
+				} else {
+					alert(
+						`Sorry, something went wrong when sending the message`
+					);
+				}
+			} catch (err) {
+				console.log(err);
+			}
+		} else {
+			alert(`Kindly enter a valid email`);
+		}
+	}
 
 	return (
 		<div className="contactFormSection topOverlay">
@@ -29,6 +61,8 @@ function ContactForm() {
 						id="name"
 						value={formInput.name}
 						onChange={handleChange}
+						required
+						minLength={2}
 					/>
 				</div>
 
@@ -40,6 +74,7 @@ function ContactForm() {
 						id="email"
 						value={formInput.email}
 						onChange={handleChange}
+						required
 					/>
 				</div>
 
@@ -53,6 +88,8 @@ function ContactForm() {
 						cols="50"
 						value={formInput.message}
 						onChange={handleChange}
+						required
+						minLength={5}
 					/>
 				</div>
 

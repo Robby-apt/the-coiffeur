@@ -1,20 +1,61 @@
 import React, { useState } from 'react';
+const validator = require('email-validator');
 
 function AppointmentForm() {
 	const [appointmentInput, setAppointmentInput] = useState({
 		fName: ``,
 		lName: ``,
+		bookingEmail: ``,
 		phoneNumber: ``,
 		dateInput: ``,
 		timeInput: ``,
 		typeOfService: ``,
 	});
 
-	function handleAppointmentChange(event) {
+	function handleChange(event) {
 		let { name, value } = event.target;
-		setAppointmentInput((...prev) => {
+		setAppointmentInput((prev) => {
 			return { ...prev, [name]: value };
 		});
+	}
+
+	async function handleSubmit(event) {
+		event.preventDefault();
+
+		if (validator.validate(appointmentInput.bookingEmail)) {
+			let dataBody = JSON.stringify(appointmentInput);
+
+			try {
+				const url = process.env.REACT_APP_BACKEND_PORT;
+				let res = await fetch(url, {
+					method: 'POST',
+					headers: { 'content-type': 'application/json' },
+					body: dataBody,
+				});
+				// get status code
+				if (res.status == 200) {
+					alert(`The message has been sent successfully`);
+					setAppointmentInput({
+						fName: ``,
+						lName: ``,
+						phoneNumber: ``,
+						bookingEmail: ``,
+						dateInput: ``,
+						timeInput: ``,
+						typeOfService: ``,
+					});
+					console.log(appointmentInput);
+				} else {
+					alert(
+						`Sorry, something went wrong when sending the message`
+					);
+				}
+			} catch (err) {
+				console.log(err);
+			}
+		} else {
+			alert(`Kindly enter a valid email`);
+		}
 	}
 
 	return (
@@ -23,7 +64,7 @@ function AppointmentForm() {
 				Book an appointment with us by filling the form below
 			</p>
 
-			<form action="" className="appointmentBookingForm">
+			<form onSubmit={handleSubmit} className="appointmentBookingForm">
 				<div className="appointmentName formSubDiv">
 					<div className="firstName inputFieldDiv">
 						<label htmlFor="fName">First Name</label>
@@ -32,7 +73,9 @@ function AppointmentForm() {
 							name="fName"
 							id="fName"
 							value={appointmentInput.fName}
-							onChange={handleAppointmentChange}
+							onChange={handleChange}
+							required
+							minLength={2}
 						/>
 					</div>
 
@@ -43,42 +86,60 @@ function AppointmentForm() {
 							name="lName"
 							id="lName"
 							value={appointmentInput.lName}
-							onChange={handleAppointmentChange}
+							onChange={handleChange}
+							required
+							minLength={2}
 						/>
 					</div>
 				</div>
 
+				<div className="bookingEmail formSubDiv inputFieldDiv">
+					<label htmlFor="bookingEmail">Email</label>
+					<input
+						type="email"
+						name="bookingEmail"
+						id="bookingEmail"
+						value={appointmentInput.bookingEmail}
+						onChange={handleChange}
+						required
+					/>
+				</div>
+
 				<div className="phoneNumber formSubDiv inputFieldDiv">
-					<label htmlFor="phoneNo">Phone Number</label>
+					<label htmlFor="phoneNumber">Phone Number</label>
 					<input
 						type="text"
-						name="phoneNo"
-						id="phoneNo"
+						name="phoneNumber"
+						id="phoneNumber"
 						value={appointmentInput.phoneNumber}
-						onChange={handleAppointmentChange}
+						onChange={handleChange}
+						required
+						minLength={10}
 					/>
 				</div>
 
 				<div className="dateAndTime formSubDiv">
 					<div className="dateInput inputFieldDiv">
-						<label htmlFor="date">Date</label>
+						<label htmlFor="dateInput">Date</label>
 						<input
 							type="date"
-							name="date"
-							id="date"
+							name="dateInput"
+							id="dateInput"
 							value={appointmentInput.dateInput}
-							onChange={handleAppointmentChange}
+							onChange={handleChange}
+							required
 						/>
 					</div>
 
 					<div className="time inputFieldDiv">
-						<label htmlFor="time">Time</label>
+						<label htmlFor="timeInput">Time</label>
 						<input
 							type="time"
-							name="time"
-							id="time"
+							name="timeInput"
+							id="timeInput"
 							value={appointmentInput.timeInput}
-							onChange={handleAppointmentChange}
+							onChange={handleChange}
+							required
 						/>
 					</div>
 				</div>
@@ -86,11 +147,13 @@ function AppointmentForm() {
 				<div className="typeOfServiceInput formSubDiv inputFieldDiv">
 					<label htmlFor="typeOfService">Type of service</label>
 					<select
-						name="typeOfServiceInputField"
+						name="typeOfService"
 						id="typeOfService"
 						value={appointmentInput.typeOfService}
-						onChange={handleAppointmentChange}
+						onChange={handleChange}
+						required
 					>
+						<option value=""></option>
 						<option value="Hair and Beard products">
 							Hair and Beard products
 						</option>
