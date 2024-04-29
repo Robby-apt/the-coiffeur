@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Brand from './navbar-components/Brand';
 
 function Navbar(props) {
 	let disableNav = () => {
@@ -8,23 +9,7 @@ function Navbar(props) {
 
 	return (
 		<nav>
-			{/* {disableNav()} */}
-			<div className="brand" onClick={() => disableNav()}>
-				<a href="/#home">
-					<img
-						src="/images/logo.svg"
-						alt="Brand Logo"
-						className="brandLogo"
-					/>
-				</a>
-				<a href="/#home">
-					<p className="brandName">
-						The
-						<br />
-						Coiffeur
-					</p>
-				</a>
-			</div>
+			<Brand disableNav={disableNav} />
 
 			<div className="navLinks">
 				<Link to="/">Home</Link>

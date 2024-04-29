@@ -34,6 +34,12 @@ app.post('/appointment', (req, res) => {
 	console.log(req.body);
 });
 
+// get data from employee login form
+app.post('/employee', (req, res) => {
+	const { username, password } = req.body;
+	console.log(req.body);
+});
+
 app.listen(port, () => {
 	console.log(`Hello from port ${port}`);
 });

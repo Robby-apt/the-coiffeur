@@ -12,6 +12,7 @@ body {
 }
 
 a {
+  color: initial;
   text-decoration: none;
 }
 
@@ -36,7 +37,7 @@ a {
   font-weight: bold;
 }
 
-#home {
+.homeSection {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/adam-winger-VjRpkGtS55w-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -45,8 +46,8 @@ a {
   flex-direction: column;
   position: relative;
 }
-#home a,
-#home p {
+.homeSection a,
+.homeSection p {
   color: #fff;
 }
 
@@ -594,6 +595,52 @@ form .formSubDiv {
 .appointmentBtn:hover {
   background-color: #000;
   color: #fff;
+}
+
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+#dashboard .mainBoard {
+  background-color: aliceblue;
+  display: flex;
+  height: calc(100vh - 2.125rem);
+}
+#dashboard footer {
+  margin: auto 0 0 0;
+}
+
+.sideBar {
+  background-color: #000;
+  border-bottom: 0.125rem #fff solid;
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+}
+.sideBar .brand {
+  margin: 0.625rem auto;
+}
+.sideBar .brand a {
+  color: #fff;
+}
+.sideBar .sideBarMenu {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem auto auto;
+}
+.sideBar .sideBarMenu .sideOption {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+}
+.sideBar .sideBarMenu .sideOption:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.sideBar .sideBarMenu .sideOption:hover {
+  cursor: pointer;
+}
+.sideBar .sideBarMenu .sideOption p {
+  margin: 0.3125rem auto 0.3125rem 0;
 }
 
 @media (max-width: 760px) {

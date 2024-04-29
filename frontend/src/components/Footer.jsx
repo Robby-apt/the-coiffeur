@@ -9,7 +9,7 @@ function Footer() {
 			<p>
 				Designed by{' '}
 				<a
-					href="https://robin-khaoya.dev"
+					href="https://robin-khaoya.onrender.com"
 					target="_blank"
 					rel="noreferrer"
 				>

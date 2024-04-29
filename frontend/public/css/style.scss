@@ -21,6 +21,7 @@ body {
 }
 
 a {
+	color: initial;
 	text-decoration: none;
 }
 
@@ -51,4 +52,5 @@ a {
 @import './about_us';
 @import './contact';
 @import './appointment';
+@import './dashboard';
 @import './media_queries';

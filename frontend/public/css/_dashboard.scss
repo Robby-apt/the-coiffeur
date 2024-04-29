@@ -1,0 +1,53 @@
+#dashboard {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	.mainBoard {
+		background-color: aliceblue;
+		display: flex;
+		height: calc(100vh - 2.125rem);
+	}
+
+	footer {
+		margin: auto 0 0 0;
+	}
+}
+
+.sideBar {
+	background-color: $secondary-color;
+	border-bottom: 0.125rem $primary-color solid;
+	display: flex;
+	flex-direction: column;
+	width: 10vw;
+
+	.brand {
+		margin: 0.625rem auto;
+		a {
+			color: $primary-color;
+		}
+	}
+
+	.sideBarMenu {
+		display: flex;
+		flex-direction: column;
+		margin: 1.25rem auto auto;
+
+		.sideOption {
+			background-color: rgba(255, 255, 255, 0.6);
+			display: flex;
+
+			&:not(:last-child) {
+				margin-bottom: 0.625rem;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			p {
+				margin: 0.3125rem auto 0.3125rem 0;
+			}
+		}
+	}
+}
