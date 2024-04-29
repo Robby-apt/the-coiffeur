@@ -16,7 +16,7 @@ app.use(appUsage);
 
 // get data from contact form
 app.post('/', (req, res) => {
-	const { name, email, message } = req.body;
+	const { fName, lName, email, message } = req.body;
 	console.log(req.body);
 });
 

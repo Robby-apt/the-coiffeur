@@ -68,6 +68,10 @@
 					margin-top: 0.625rem;
 				}
 
+				.inputFieldDiv {
+					width: 49%;
+				}
+
 				label {
 					margin: 0;
 				}
@@ -166,7 +170,7 @@
 	}
 
 	.imgSection {
-		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
 			url(../images/alex-mihai-c-FWgYghZrVqU-unsplash.jpg);
 		background-position: center;
 		background-size: cover;

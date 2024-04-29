@@ -3,14 +3,14 @@ import React from 'react';
 function SidebarNav() {
 	return (
 		<div className="brand">
-			<a href="/#home">
+			<a href="/dashboard">
 				<img
 					src="/images/logo.svg"
 					alt="Brand Logo"
 					className="brandLogo"
 				/>
 			</a>
-			<a href="/#home">
+			<a href="/dashboard">
 				<p className="brandName">
 					The
 					<br />

@@ -3,7 +3,8 @@ const validator = require('email-validator');
 
 function ContactForm() {
 	const [formInput, setFormInput] = useState({
-		name: ``,
+		fName: ``,
+		lName: ``,
 		email: ``,
 		message: ``,
 	});
@@ -32,7 +33,8 @@ function ContactForm() {
 				if (res.status == 200) {
 					alert(`The message has been sent successfully`);
 					setFormInput({
-						name: ``,
+						fName: ``,
+						lName: ``,
 						email: ``,
 						message: ``,
 					});
@@ -53,17 +55,40 @@ function ContactForm() {
 	return (
 		<div className="contactFormSection topOverlay">
 			<form onSubmit={handleSubmit} className="contactForm">
-				<div className="nameInput topInput">
-					<label htmlFor="name">Name</label>
-					<input
-						type="text"
-						name="name"
-						id="name"
-						value={formInput.name}
-						onChange={handleChange}
-						required
-						minLength={2}
-					/>
+				<div
+					className="appointmentName formSubDiv"
+					style={{
+						display: `flex`,
+						flexDirection: `row`,
+						margin: `0`,
+						justifyContent: `space-between`,
+					}}
+				>
+					<div className="firstName inputFieldDiv">
+						<label htmlFor="contactFName">First Name</label>
+						<input
+							type="text"
+							name="fName"
+							id="contactFName"
+							value={formInput.fName}
+							onChange={handleChange}
+							required
+							minLength={2}
+						/>
+					</div>
+
+					<div className="lastName inputFieldDiv">
+						<label htmlFor="contactLName">Last Name</label>
+						<input
+							type="text"
+							name="lName"
+							id="contactLName"
+							value={formInput.lName}
+							onChange={handleChange}
+							required
+							minLength={2}
+						/>
+					</div>
 				</div>
 
 				<div className="emailInput">

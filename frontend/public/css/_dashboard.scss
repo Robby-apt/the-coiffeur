@@ -4,7 +4,6 @@
 	height: 100vh;
 
 	.mainBoard {
-		background-color: aliceblue;
 		display: flex;
 		height: calc(100vh - 2.125rem);
 	}
@@ -20,6 +19,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 10vw;
+	min-width: 100px;
 
 	.brand {
 		margin: 0.625rem auto;
@@ -48,6 +48,48 @@
 			p {
 				margin: 0.3125rem auto 0.3125rem 0;
 			}
+		}
+	}
+}
+
+.mainDisplay {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	nav {
+		display: flex;
+
+		h3 {
+			margin: auto auto auto 0;
+		}
+
+		a {
+			background: none;
+			border: 0.125rem solid $secondary-color;
+			display: flex;
+			font-weight: bold;
+			padding: 0.3125rem 0.625rem;
+
+			&:hover {
+				background-color: $secondary-color;
+				color: $primary-color;
+			}
+		}
+	}
+
+	.infoDisplay {
+		background-color: aliceblue;
+		margin: 0.625rem auto;
+		width: 90%;
+		height: 90vh;
+		padding: 1.25rem;
+
+		.info {
+			background-color: greenyellow;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
 		}
 	}
 }

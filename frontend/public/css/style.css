@@ -420,6 +420,9 @@ nav p {
 .topRow .contactFormSection form div:not(.topInput) {
   margin-top: 0.625rem;
 }
+.topRow .contactFormSection form div .inputFieldDiv {
+  width: 49%;
+}
 .topRow .contactFormSection form div label {
   margin: 0;
 }
@@ -603,7 +606,6 @@ form .formSubDiv {
   height: 100vh;
 }
 #dashboard .mainBoard {
-  background-color: aliceblue;
   display: flex;
   height: calc(100vh - 2.125rem);
 }
@@ -617,6 +619,7 @@ form .formSubDiv {
   display: flex;
   flex-direction: column;
   width: 10vw;
+  min-width: 100px;
 }
 .sideBar .brand {
   margin: 0.625rem auto;
@@ -641,6 +644,42 @@ form .formSubDiv {
 }
 .sideBar .sideBarMenu .sideOption p {
   margin: 0.3125rem auto 0.3125rem 0;
+}
+
+.mainDisplay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mainDisplay nav {
+  display: flex;
+}
+.mainDisplay nav h3 {
+  margin: auto auto auto 0;
+}
+.mainDisplay nav a {
+  background: none;
+  border: 0.125rem solid #000;
+  display: flex;
+  font-weight: bold;
+  padding: 0.3125rem 0.625rem;
+}
+.mainDisplay nav a:hover {
+  background-color: #000;
+  color: #fff;
+}
+.mainDisplay .infoDisplay {
+  background-color: aliceblue;
+  margin: 0.625rem auto;
+  width: 90%;
+  height: 90vh;
+  padding: 1.25rem;
+}
+.mainDisplay .infoDisplay .info {
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 @media (max-width: 760px) {

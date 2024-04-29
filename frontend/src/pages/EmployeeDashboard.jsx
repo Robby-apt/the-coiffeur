@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Sidebar from '../components/dashboard-components/Sidebar';
 import MainNav from '../components/dashboard-components/MainNav';
+import InfoDisplay from '../components/dashboard-components/InfoDisplay';
 
 function EmployeeDashboard() {
 	const [isAppointmentsActive, setIsAppointmentsActive] = useState(true);
@@ -40,6 +41,11 @@ function EmployeeDashboard() {
 				/>
 				<div className="mainDisplay">
 					<MainNav />
+					<InfoDisplay
+						isAppointmentsActive={isAppointmentsActive}
+						isQueriesActive={isQueriesActive}
+						isEmployeesActive={isEmployeesActive}
+					/>
 				</div>
 			</div>
 			<Footer />

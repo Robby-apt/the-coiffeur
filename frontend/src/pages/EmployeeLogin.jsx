@@ -8,14 +8,14 @@ function EmployeeLogin() {
 		<div id="home" className="homeSection hero section">
 			<nav id="loginNav">
 				<div className="brand">
-					<a href="/#home">
+					<a href="/employee">
 						<img
 							src="/images/logo.svg"
 							alt="Brand Logo"
 							className="brandLogo"
 						/>
 					</a>
-					<a href="/#home">
+					<a href="/employee">
 						<p className="brandName">
 							The
 							<br />
