@@ -677,6 +677,7 @@ form .formSubDiv {
 }
 .mainDisplay .infoDisplay .info {
   background-color: greenyellow;
+  border-radius: 0.3125rem;
   display: flex;
   flex-direction: column;
   width: 100%;
