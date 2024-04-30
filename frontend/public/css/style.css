@@ -676,7 +676,7 @@ form .formSubDiv {
   padding: 1.25rem;
 }
 .mainDisplay .infoDisplay .info {
-  background-color: greenyellow;
+  background-color: #fff;
   border-radius: 0.3125rem;
   display: flex;
   flex-direction: column;
