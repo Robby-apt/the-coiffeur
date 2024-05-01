@@ -19,7 +19,7 @@ function LoginForm() {
 		let dataBody = JSON.stringify(employeeLoginForm);
 
 		try {
-			const url = process.env.REACT_APP_BACKEND_PORT;
+			const url = `${process.env.REACT_APP_BACKEND_PORT}/employee`;
 			let res = await fetch(url, {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
@@ -27,13 +27,15 @@ function LoginForm() {
 			});
 			// get status code
 			if (res.status == 200) {
-				alert(`The message has been sent successfully`);
-				setFormInput({
+				alert(`Login successful! Redirecting to dashboard...`);
+				setEmployeeLoginForm({
 					name: ``,
 					email: ``,
 					message: ``,
 				});
-				console.log(formInput);
+				window.location.href = '/dashboard'; // Redirect to dashboard page
+			} else if (res.status == 401) {
+				alert(`Kindly enter valid credentials`);
 			} else {
 				alert(`Sorry, something went wrong when sending the message`);
 			}
@@ -45,7 +47,7 @@ function LoginForm() {
 	return (
 		<div className="appointmentForm">
 			<form onSubmit={handleSubmit} className="appointmentBookingForm">
-                <h1>Employee Portal</h1>
+				<h1>Employee Portal</h1>
 
 				<div className="firstName inputFieldDiv formSubDiv">
 					<label htmlFor="username">Username</label>

@@ -26,7 +26,7 @@ function AppointmentForm() {
 			let dataBody = JSON.stringify(appointmentInput);
 
 			try {
-				const url = process.env.REACT_APP_BACKEND_PORT;
+				const url = `${process.env.REACT_APP_BACKEND_PORT}/appointment`;
 				let res = await fetch(url, {
 					method: 'POST',
 					headers: { 'content-type': 'application/json' },

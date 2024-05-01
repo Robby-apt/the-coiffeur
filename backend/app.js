@@ -6,12 +6,20 @@ const cors = require('cors');
 const mysql = require('mysql');
 const port = process.env.PORT || 3001;
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
+// import database insertion functions
+const handleContact = require('./handleContact');
+const handleBooking = require('./handleBooking');
 
-// MySQL connection pool
+// Configuring app dependencies
+const appUsage = [
+	bodyParser.urlencoded({ extended: true }),
+	bodyParser.json(),
+	cors(),
+];
+
+app.use(appUsage);
+
+// MySQL connection
 const pool = mysql.createPool({
 	host: process.env.HOST,
 	user: process.env.USER,
@@ -19,96 +27,55 @@ const pool = mysql.createPool({
 	database: process.env.DATABASE,
 });
 
-// Route for contact form submissions
+// Handling data from contact form with prepared statements (replace with your chosen security approach)
 app.post('/', (req, res) => {
 	const { fName, lName, email, message } = req.body;
-	const query =
-		'INSERT INTO Customer_Query (first_name, last_name, email, customer_query) VALUES (?, ?, ?, ?)';
-	pool.query(query, [fName, lName, email, message], (err, result) => {
-		if (err) {
-			console.error(
-				'Error inserting data into Customer_Query table:',
-				err
-			);
-			res.status(500).json({
-				error: 'Error inserting data into Customer_Query table',
-			});
-		} else {
-			console.log('Data inserted into Customer_Query table successfully');
-			res.status(200).json({
-				message: 'Data inserted into Customer_Query table successfully',
-			});
-		}
-	});
+	console.log(req.body);
+
+	handleContact(fName, lName, email, message, pool, res);
 });
 
-// Route for booking form submissions
+// Handling data from booking form with prepared statements (mysql library)
 app.post('/appointment', (req, res) => {
 	const {
 		fName,
 		lName,
 		phoneNumber,
-		email,
+		bookingEmail,
 		dateInput,
 		timeInput,
 		typeOfService,
 	} = req.body;
-	const query =
-		'INSERT INTO Appointments (fName, lName, phoneNumber, email, appointment_date, appointment_time, typeOfService) VALUES (?, ?, ?, ?, ?, ?, ?)';
-	pool.query(
-		query,
-		[fName, lName, phoneNumber, email, dateInput, timeInput, typeOfService],
-		(err, result) => {
-			if (err) {
-				console.error(
-					'Error inserting data into Appointments table:',
-					err
-				);
-				res.status(500).json({
-					error: 'Error inserting data into Appointments table',
-				});
-			} else {
-				console.log(
-					'Data inserted into Appointments table successfully'
-				);
-				res.status(200).json({
-					message:
-						'Data inserted into Appointments table successfully',
-				});
-			}
-		}
+	console.log(req.body);
+
+	handleBooking(
+		fName,
+		lName,
+		phoneNumber,
+		bookingEmail,
+		dateInput,
+		timeInput,
+		typeOfService,
+		pool,
+		res
 	);
 });
 
-// Route for employee login
+// Handling data from employee login form
 app.post('/employee', (req, res) => {
 	const { username, password } = req.body;
+	console.log(req.body);
 
-	console.log('Received username:', username);
-	console.log('Received password:', password);
-
-	// Check if username and password match the expected values
 	if (
 		username === process.env.ADMIN_USERNAME &&
 		password === process.env.ADMIN_PASSWORD
 	) {
-		// Authentication successful
-		// Redirect to the dashboard page
-		res.redirect('/dashboard');
+		res.status(200).json({ message: 'Authentication successful' });
 	} else {
-		// Authentication failed
-		// Respond with an error message or status code indicating unauthorized access
 		res.status(401).json({ error: 'Unauthorized access' });
 	}
 });
 
-// Route for dashboard page
-app.get('/dashboard', (req, res) => {
-	// Render the dashboard page here or perform any necessary actions
-	res.send('Welcome to the dashboard');
-});
-
-// Start the server
 app.listen(port, () => {
-	console.log(`Hello from port ${port}`);
+	console.log(`Server running on port ${port}`);
 });
