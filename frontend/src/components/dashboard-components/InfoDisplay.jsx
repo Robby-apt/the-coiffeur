@@ -6,11 +6,11 @@ import EmployeeInfo from './infoDisplay-components/EmployeeInfo';
 function InfoDisplay(props) {
 	const renderAccordingToState = () => {
 		if (props.isAppointmentsActive) {
-			return <AppointmentInfo />;
+			return <AppointmentInfo fetchedData={props.fetchedData} />;
 		} else if (props.isQueriesActive) {
-			return <QueryInfo />;
+			return <QueryInfo fetchedData={props.fetchedData} />;
 		} else if (props.isEmployeesActive) {
-			return <EmployeeInfo />;
+			return <EmployeeInfo fetchedData={props.fetchedData} />;
 		}
 	};
 
