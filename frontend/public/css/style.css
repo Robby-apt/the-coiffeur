@@ -600,6 +600,44 @@ form .formSubDiv {
   color: #fff;
 }
 
+.receipt {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+.receipt h2 {
+  color: #000;
+  margin: 0 auto 1.25rem;
+}
+.receipt p {
+  color: #000;
+}
+.receipt .btnSection {
+  display: flex;
+  justify-content: space-between;
+}
+.receipt .btnSection button:first-child {
+  background: none;
+  border: 0.125rem solid #000;
+  display: flex;
+  font-weight: bold;
+  margin: 0.625rem auto 0;
+  padding: 0.3125rem 0.625rem;
+}
+.receipt .btnSection button:first-child:hover {
+  background-color: #000;
+  color: #fff;
+}
+.receipt .btnSection button:last-child {
+  background: red;
+  border: 0.125rem solid red;
+  color: #fff;
+  display: flex;
+  font-weight: bold;
+  margin: 0.625rem auto 0;
+  padding: 0.3125rem 0.625rem;
+}
+
 #dashboard {
   display: flex;
   flex-direction: column;

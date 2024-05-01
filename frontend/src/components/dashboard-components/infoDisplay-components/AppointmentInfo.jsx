@@ -28,7 +28,12 @@ function AppointmentInfo(props) {
 									<td>{appointment.lName}</td>
 									<td>{appointment.phoneNumber}</td>
 									<td>{appointment.email}</td>
-									<td>{appointment.appointment_date}</td>
+									<td>
+										{new Date(
+											appointment.appointment_date
+										).toLocaleDateString()}
+									</td>
+
 									<td>{appointment.appointment_time}</td>
 									<td>{appointment.typeOfService}</td>
 								</tr>

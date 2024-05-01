@@ -77,3 +77,48 @@ form {
 		color: $primary-color;
 	}
 }
+
+.receipt {
+	color: $secondary-color;
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		color: $secondary-color;
+		margin: 0 auto 1.25rem;
+	}
+
+	p {
+		color: $secondary-color;
+	}
+
+	.btnSection {
+		display: flex;
+		justify-content: space-between;
+
+		button {
+			&:first-child {
+				background: none;
+				border: 0.125rem solid $secondary-color;
+				display: flex;
+				font-weight: bold;
+				margin: 0.625rem auto 0;
+				padding: 0.3125rem 0.625rem;
+
+				&:hover {
+					background-color: $secondary-color;
+					color: $primary-color;
+				}
+			}
+			&:last-child {
+				background: red;
+				border: 0.125rem solid red;
+				color: $primary-color;
+				display: flex;
+				font-weight: bold;
+				margin: 0.625rem auto 0;
+				padding: 0.3125rem 0.625rem;
+			}
+		}
+	}
+}
